@@ -12,11 +12,7 @@ $(function(){
       $('#navimg').stop().slideUp();
     })
 
-
 });
-
-
-
 
 // 페이지 실행시 함수적용
 window.onload = function() {
@@ -85,24 +81,63 @@ scrollbarshowOb.observe(header)
 
 
 
-//--------------------- 변경예정
-/* window.onload = function() {
 
-  window.addEventListener('wheel', function(event) {
-    // 스크롤 방향 확인
-    var delta = Math.sign(event.deltaY);
-    
-    // 화면 전체높이 만큼 이동
-    if (delta > 0) {
-      window.scrollBy(0, window.innerHeight); // 아래로 스크롤
-    } else {
-      window.scrollBy(0, -window.innerHeight); // 위로 스크롤
+// 애니메이션 효과
+
+let fadeUpOb = new IntersectionObserver((e) => {
+  e.forEach((a) => {
+    if (a.isIntersecting) {
+      a.target.classList.add('animate__animated', 'animate__fadeInUp');
     }
-    
-    // 이벤트 전파 방지
-    event.preventDefault();
-  });
-};
- */
+  })
+})
 
+let bgtexth1 = document.querySelector('.bgtext > h1');
+let bgtextp = document.querySelector('.bgtext > p');
+let programbox = document.querySelectorAll('.programbox > div');
 
+let inforbox = document.querySelectorAll('.inforbox > div');
+let section3h1 = document.querySelector('#section3 > h1');
+let section3p = document.querySelector('#section3 > p');
+
+let eventbox = document.querySelectorAll('.eventbox > div');
+let section4h1 = document.querySelector('.eventTextbox > h1');
+let section4p = document.querySelector('.eventTextbox > p');
+
+let groupbox = document.querySelectorAll('.groupbox > div');
+let section5h1 = document.querySelector('.groupTextbox > h1');
+let section5p = document.querySelector('.groupTextbox > p');
+
+let commubox = document.querySelectorAll('.commubox > div');
+let section6h1 = document.querySelector('.commuTextbox > h1');
+let section6p = document.querySelector('.commuTextbox > p');
+
+fadeUpOb.observe(bgtexth1)
+fadeUpOb.observe(bgtextp)
+fadeUpOb.observe(programbox[0])
+fadeUpOb.observe(programbox[1])
+fadeUpOb.observe(programbox[2])
+
+fadeUpOb.observe(inforbox[0])
+fadeUpOb.observe(inforbox[1])
+fadeUpOb.observe(section3h1)
+fadeUpOb.observe(section3p)
+
+fadeUpOb.observe(section4h1)
+fadeUpOb.observe(section4p)
+fadeUpOb.observe(eventbox[0])
+fadeUpOb.observe(eventbox[1])
+fadeUpOb.observe(eventbox[2])
+
+fadeUpOb.observe(section5h1)
+fadeUpOb.observe(section5p)
+fadeUpOb.observe(groupbox[0])
+fadeUpOb.observe(groupbox[1])
+fadeUpOb.observe(groupbox[2])
+
+fadeUpOb.observe(section6h1)
+fadeUpOb.observe(section6p)
+fadeUpOb.observe(commubox[0])
+fadeUpOb.observe(commubox[1])
+fadeUpOb.observe(commubox[2])
+fadeUpOb.observe(commubox[3])
